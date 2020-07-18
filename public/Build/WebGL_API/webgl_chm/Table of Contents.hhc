@@ -1,0 +1,421 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="API参考">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="结构参考">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="结构图">
+				<param name="Local" value="classimage.html">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Core">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Cartographic ">
+				<param name="Local" value="Documentation/Cartographic.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="HypsometricSetting ">
+				<param name="Local" value="Documentation/HypsometricSetting.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Credential ">
+				<param name="Local" value="Documentation/Credential.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Ellipsoid ">
+				<param name="Local" value="Documentation/Ellipsoid.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="ColorTable ">
+				<param name="Local" value="Documentation/ColorTable.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CesiumTerrainProvider ">
+				<param name="Local" value="Documentation/CesiumTerrainProvider.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Cartesian3 ">
+				<param name="Local" value="Documentation/Cartesian3.html">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="DataSources">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="PolylineTrailMaterialProperty ">
+				<param name="Local" value="Documentation/PolylineTrailMaterialProperty.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="KmlDataSource ">
+				<param name="Local" value="Documentation/KmlDataSource.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="EntityCollection">
+				<param name="Local" value="Documentation/EntityCollection.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="DataSource ">
+				<param name="Local" value="Documentation/DataSource.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="DataSourceCollection ">
+				<param name="Local" value="Documentation/DataSourceCollection.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Entity ">
+				<param name="Local" value="Documentation/Entity.html">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Fly">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="FlyManager ">
+				<param name="Local" value="Documentation/FlyManager.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="StopPlayMode">
+				<param name="Local" value="Documentation/StopPlayMode.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="RouteStop ">
+				<param name="Local" value="Documentation/RouteStop.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="RouteCollection">
+				<param name="Local" value="Documentation/RouteCollection.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Route">
+				<param name="Local" value="Documentation/Route.html">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Geometry3D">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Point3Ds">
+				<param name="Local" value="Documentation/Point3Ds.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="GeoLine3D">
+				<param name="Local" value="Documentation/GeoLine3D.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="GeoBillboard ">
+				<param name="Local" value="Documentation/GeoBillboard.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Geometry3D">
+				<param name="Local" value="Documentation/Geometry3D.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="GeoPoint3D ">
+				<param name="Local" value="Documentation/GeoPoint3D.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="GeoCone">
+				<param name="Local" value="Documentation/GeoCone.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="GeoRegion3D ">
+				<param name="Local" value="Documentation/GeoRegion3D.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="GeoEllipsoid">
+				<param name="Local" value="Documentation/GeoEllipsoid.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="GeoBox">
+				<param name="Local" value="Documentation/GeoBox.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="GeoSphere ">
+				<param name="Local" value="Documentation/GeoSphere.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="GeoCylinder">
+				<param name="Local" value="Documentation/GeoCylinder.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="GeoModel3D ">
+				<param name="Local" value="Documentation/GeoModel3D.html">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Handler">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="MeasureMode ">
+				<param name="Local" value="Documentation/MeasureMode.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="DrawHandler">
+				<param name="Local" value="Documentation/DrawHandler.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="MeasureHandler ">
+				<param name="Local" value="Documentation/MeasureHandler.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="DrawMode">
+				<param name="Local" value="Documentation/DrawMode.html">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Spatial Analysis">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Sightline">
+				<param name="Local" value="Documentation/Sightline.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="ViewShed3D ">
+				<param name="Local" value="Documentation/ViewShed3D.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Style3D">
+				<param name="Local" value="Documentation/Style3D.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Skyline">
+				<param name="Local" value="Documentation/Skyline.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Profile">
+				<param name="Local" value="Documentation/Profile.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="ProjectionImage ">
+				<param name="Local" value="Documentation/ProjectionImage.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="ShadowQueryPoints ">
+				<param name="Local" value="Documentation/ShadowQueryPoints.html">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="S3MTiles">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="DynamicLayer3D ">
+				<param name="Local" value="Documentation/DynamicLayer3D.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="DDSTexture ">
+				<param name="Local" value="Documentation/DDSTexture.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="DDSTextureManager ">
+				<param name="Local" value="Documentation/DDSTextureManager.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="DynamicObjectState ">
+				<param name="Local" value="Documentation/DynamicObjectState.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="S3MInstance ">
+				<param name="Local" value="Documentation/S3MInstance.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="S3MInstanceCollection ">
+				<param name="Local" value="Documentation/S3MInstanceCollection.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="S3MTilesLayer">
+				<param name="Local" value="Documentation/S3MTilesLayer.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SplitDirection">
+				<param name="Local" value="Documentation/SplitDirection.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="BufferManager">
+				<param name="Local" value="Documentation/BufferManager.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="S3MPixelFormat">
+				<param name="Local" value="Documentation/S3MPixelFormat.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="S3MBloomEffect">
+				<param name="Local" value="Documentation/S3MBloomEffect.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SHADOWTYPE ">
+				<param name="Local" value="Documentation/SHADOWTYPE.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="ModifyRegionMode">
+				<param name="Local" value="Documentation/ModifyRegionMode.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SelctColorType ">
+				<param name="Local" value="Documentation/SelctColorType.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="UrlType">
+				<param name="Local" value="Documentation/UrlType.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="ObjsOperationType">
+				<param name="Local" value="Documentation/ObjsOperationType.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="S3MCompressType">
+				<param name="Local" value="Documentation/S3MCompressType.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="InstancedType">
+				<param name="Local" value="Documentation/InstancedType.html">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Scene">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="ScanEffectMode ">
+				<param name="Local" value="Documentation/ScanEffectMode.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="FieldLayer3D ">
+				<param name="Local" value="Documentation/FieldLayer3D.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="ColorCorrection ">
+				<param name="Local" value="Documentation/ColorCorrection.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="DepthOfFieldEffect ">
+				<param name="Local" value="Documentation/DepthOfFieldEffect.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="ScanEffect ">
+				<param name="Local" value="Documentation/ScanEffect.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="BloomEffect ">
+				<param name="Local" value="Documentation/BloomEffect.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="ParticleVelocityFieldEffect ">
+				<param name="Local" value="Documentation/ParticleVelocityFieldEffect.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="BingMapsImageryProvider ">
+				<param name="Local" value="Documentation/BingMapsImageryProvider.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="MultiViewportMode">
+				<param name="Local" value="Documentation/MultiViewportMode.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Scene">
+				<param name="Local" value="Documentation/Scene.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SuperMapImageryProvider">
+				<param name="Local" value="Documentation/SuperMapImageryProvider.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="TiandituImageryProvider">
+				<param name="Local" value="Documentation/TiandituImageryProvider.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="TiandituMapsStyle ">
+				<param name="Local" value="Documentation/TiandituMapsStyle.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Camera">
+				<param name="Local" value="Documentation/Camera.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Globe ">
+				<param name="Local" value="Documentation/Globe.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="ImageryLayer">
+				<param name="Local" value="Documentation/ImageryLayer.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="ImageryLayerCollection">
+				<param name="Local" value="Documentation/ImageryLayerCollection.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="ImagerySplitDirection ">
+				<param name="Local" value="Documentation/ImagerySplitDirection.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Layers ">
+				<param name="Local" value="Documentation/Layers.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="WireFrameType ">
+				<param name="Local" value="Documentation/WireFrameType.html">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Widgets">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Viewer">
+				<param name="Local" value="Documentation/Viewer.html">
+				</OBJECT>
+		</UL>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="专题介绍">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="飞行管理专题">
+			<param name="Local" value="doc/FlyManagerTopic.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="加载倾斜摄影模型">
+			<param name="Local" value="doc/LoadObliqueModel_OperateTopic.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="倾斜摄影模型单体化与属性查询">
+			<param name="Local" value="doc/AttributeQueryofObliqueModel_OperateTopic.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="加载地形数据">
+			<param name="Local" value="doc/LoadTerrain_OperateTopic.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="加载GLTF三维模型">
+			<param name="Local" value="doc/LoadGltfModel_OperateTopic.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="加载影像数据">
+			<param name="Local" value="doc/LoadImagery_OperateTopic.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="加载BIM及精细模型">
+			<param name="Local" value="doc/LoadBIM_OperateTopic.html">
+			</OBJECT>
+	</UL>
+</UL>
+</BODY></HTML>

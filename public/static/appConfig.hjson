@@ -1,0 +1,12 @@
+{
+  "SYSNAME": "测试项目",
+  "VERSION": "1.0.0",
+  "development": {
+    "API": "http://52.83.103.252:8086",
+    "API_FILE_DIR": "/dgp-server-web-nr/"
+  },
+  "production": {
+    "API": "http://52.83.103.252:8086",
+    "API_FILE_DIR": "/dgp-server-web-nr/"
+  }
+}
