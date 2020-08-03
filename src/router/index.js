@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import webgl from "./webgl";
 import componentTest from "./componentTest";
+import personalTest from "./personalTest";
 
 Vue.use(VueRouter);
 
@@ -22,6 +23,9 @@ const routes = [
   },
   {
     ...componentTest
+  },
+  {
+    ...personalTest
   }
 ];
 

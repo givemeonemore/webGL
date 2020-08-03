@@ -9,6 +9,7 @@ import "./register";
 
 // 全局css
 import "./styles/global.scss";
+
 Vue.config.productionTip = false;
 // initConfig
 // import initAppConfig from "./initAppConfig";
