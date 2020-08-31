@@ -1,6 +1,7 @@
 $fontFamily: "Microsoft YaHei", "PingFang SC";
 
 html body {
+  font-size: 0.93rem;
   font-family: $fontFamily;
   line-height: 1.15; // iview设的是1.5，但ui是常规的1.15，需要覆盖
 }

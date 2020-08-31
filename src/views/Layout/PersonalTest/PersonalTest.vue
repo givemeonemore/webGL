@@ -19,7 +19,7 @@
             渐变发光加载动画特效
           </MenuItem>
           <MenuItem name="css-2">
-            WebGL工作原理
+            transform动画效果
           </MenuItem>
           <MenuItem name="css-3">
             WebGL着色器和GLSL
@@ -31,10 +31,18 @@
         <Submenu name="JavaScript">
           <template slot="title">
             <Icon type="ios-keypad"></Icon>
-            图像处理
+            JavaScript实践
           </template>
-          <MenuItem name="2-1">WebGL图像处理1</MenuItem>
-          <MenuItem name="2-2">WebGL图像处理2</MenuItem>
+          <MenuItem name="JavaScript-1">WebGL图像处理1</MenuItem>
+          <MenuItem name="JavaScript-2">WebGL图像处理2</MenuItem>
+        </Submenu>
+        <Submenu name="Vue">
+          <template slot="title">
+            <Icon type="ios-paper"></Icon>
+            Vue理论实践
+          </template>
+          <MenuItem name="vue-1">如何从插槽中发出数据</MenuItem>
+          <MenuItem name="vue-2">WebGL图像处理2</MenuItem>
         </Submenu>
       </Menu>
     </Sider>

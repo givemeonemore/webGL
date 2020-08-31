@@ -70,11 +70,21 @@ module.exports = {
     config.resolve.alias
       .set("@", resolve("src"))
       .set("cesium", resolve(__dirname, cesiumSource));
-    // image exclude svg
-    const imagesRule = config.module.rule("images");
-    imagesRule
-      .test(/\.(png|jpe?g|gif|webp|svg)(\?.*)?$/)
+    // svg的处理
+    config.module
+      .rule("svg")
       .exclude.add(resolve("src/icon/svg"))
+      .end();
+    config.module
+      .rule("icon")
+      .test(/\.svg$/)
+      .include.add(resolve("src/icon/svg"))
+      .end()
+      .use("svg-sprite-loader")
+      .loader("svg-sprite-loader")
+      .options({
+        symbolId: "icon-[name]"
+      })
       .end();
   },
   // module: {

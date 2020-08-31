@@ -37,11 +37,25 @@ export default {
             requireAuth: true // 判断是否需要登录
           },
           // component: () =>
-          //   import(/* webpackChunkName: "1-2" */ "@/views/WebGL/Body/1/1-2.vue")
+          //   import(/* webpackChunkName: "CSS-1" */ "@/views/Layout/PersonalTest/CSS/CSS-1.vue")
           component: () =>
             import(
               /* webpackChunkName: "MapTest" */
               "@/views/Layout/PersonalTest/CSS/CSS-1.vue"
+            )
+        },
+        {
+          path: "css-2",
+          name: "css-2",
+          meta: {
+            requireAuth: true // 判断是否需要登录
+          },
+          // component: () =>
+          //   import(/* webpackChunkName: "CSS-2" */ "@/views/Layout/PersonalTest/CSS/CSS-2.vue")
+          component: () =>
+            import(
+              /* webpackChunkName: "MapTest" */
+              "@/views/Layout/PersonalTest/CSS/CSS-2.vue"
             )
         }
       ]

@@ -5,7 +5,15 @@
 </template>
 
 <script>
+/*
+ * @Author: 周然
+ * @Date: 2020-04-26 21:44:21
+ * @LastEditors: humx
+ * @LastEditTime: 2020-08-03 13:26:37
+ * @Description:
+ */
 export default {
+  name: "loading",
   data() {
     return {};
   }
