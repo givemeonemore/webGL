@@ -1,0 +1,6 @@
+// 边线粗细，格式，颜色
+@mixin OriginBorder($borderWidth: 1px, $borderStyle: solid, $borderColor: $color1890ff) {
+  border-width: $borderWidth;
+  border-style: $borderStyle;
+  border-color: $borderColor;
+}

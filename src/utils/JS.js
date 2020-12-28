@@ -52,7 +52,7 @@ export function highSwitch(val) {
  * 如果需要从简单的数组中遍历出不同的部分，可直接使用reduce方法
  * @param {*} arr 进行筛选的原数组
  * @param {*} key 获取value值，根据该value值的不同，将不同的部分push到一起
- * @param {*} haveSelfFunction 是否存在对于数据的其他操作，如果有，则对其进行其他自定义的操作
+ * @param {*} fc 是否存在对于数据的其他操作，如果有，则对其进行其他自定义的操作
  * reduce 的两个参数
  * function (total, currentValue, currentIndex, arr)
  *   total： 初始值, 或者计算结束后的返回值。可以看见我们这里的初始值就是一个空数组。

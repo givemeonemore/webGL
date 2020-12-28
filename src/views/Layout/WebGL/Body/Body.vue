@@ -2,6 +2,7 @@
   <div class="body">
     <Sider class="body-sider">
       <Menu
+        v-if="showMenu"
         ref="Menu"
         :active-name="activeName"
         accordion
@@ -10,7 +11,31 @@
         :open-names="openName"
         @on-select="handleSkip"
       >
-        <Submenu name="1">
+        <Submenu
+          v-for="(item, index) in menuData"
+          :key="index"
+          :name="item.name"
+        >
+          <template v-if="item.children && item.children.length">
+            <template slot="title">
+              <Icon :type="item.icon"></Icon>
+              {{ item.label }}
+            </template>
+            <MenuItem
+              v-for="(cItem, cIndex) in item.children"
+              :key="cIndex"
+              :name="cItem.name"
+              >{{ cItem.label }}</MenuItem
+            >
+          </template>
+          <template v-else>
+            <template slot="title">
+              <Icon type="ios-navigate"></Icon>
+              {{ item.label }}
+            </template>
+          </template>
+        </Submenu>
+        <!-- <Submenu name="1">
           <template slot="title">
             <Icon type="ios-navigate"></Icon>
             WebGL基础
@@ -51,7 +76,7 @@
             WebGL 2D图像伸缩
           </MenuItem>
           <MenuItem name="3-4">WebGL 2D矩阵</MenuItem>
-        </Submenu>
+        </Submenu> -->
       </Menu>
     </Sider>
     <Layout class="body-layout">
@@ -65,21 +90,36 @@
 </template>
 
 <script>
+import { getWebGLMenu } from "@/api/public";
 export default {
   name: "Body",
   data() {
     return {
+      showMenu: false,
       activeName: "1-1",
-      openName: ["1"]
+      openName: ["1"],
+      menuData: []
     };
   },
   computed: {},
-  created() {
-    this.activeName = this.$router.currentRoute.name;
-    this.openName[0] = this.$router.currentRoute.name.substr(0, 1);
+  async mounted() {
+    this.menuData = await getWebGLMenu();
+    this.showMenu = true;
     this.$nextTick(() => {
+      this.activeName = this.$router.currentRoute.name;
+      this.openName[0] = this.$router.currentRoute.name.substr(0, 1);
       this.$refs.Menu.updateActiveName();
     });
+  },
+  created() {
+    // this.$nextTick(() => {
+    //   this.activeName = this.$router.currentRoute.name;
+    //   this.openName[0] = this.$router.currentRoute.name.substr(0, 1);
+    //   this.$refs.Menu.updateActiveName();
+    // });
+    // this.$nextTick(() => {
+    //   this.$refs.Menu.updateActiveName();
+    // });
   },
   methods: {
     updateActiveName() {},

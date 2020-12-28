@@ -100,3 +100,10 @@ export function delCookie(cName) {
 export function clearCookie(cName) {
   setCookie(cName, "", -1);
 }
+
+// 去除生产环境中的console.log
+export function rewriteLog() {
+  console.log = (function(log) {
+    return process.env.NODE_ENV == "development" ? log : function() {};
+  })(console.log);
+}

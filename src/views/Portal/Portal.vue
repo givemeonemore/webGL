@@ -19,6 +19,7 @@
 
 <script>
 import pCanvas from "../Login/components/LoginCavans";
+import { SET_SYSNAME } from "@/store/types.js";
 export default {
   data() {
     return {
@@ -35,6 +36,7 @@ export default {
   },
   methods: {
     handleSkip(item) {
+      this.$store.commit(SET_SYSNAME, item.meta.sysName);
       this.$router.push({
         name: item.children[0].name,
         params: {}

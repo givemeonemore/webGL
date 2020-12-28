@@ -9,6 +9,10 @@ import "./register";
 
 // 全局css
 import "./styles/global.scss";
+
+// 全局svg
+import "@/icon/svg";
+
 Vue.config.productionTip = false;
 // initConfig
 // import initAppConfig from "./initAppConfig";

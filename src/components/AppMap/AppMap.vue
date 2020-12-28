@@ -89,7 +89,7 @@ export default {
           zoom: this.mapInfo.extent.zoom
         });
 
-        let layer = await customWebGLPoint(this.mapInfo, this.$glMatrix);
+        let layer = await customWebGLPoint(pt, this.$glMatrix);
         map.add(layer);
 
         this.locateGraphicLayer = map.findLayerById("locateGraphicLayer");
@@ -126,6 +126,7 @@ export default {
         });
         mapView.when(
           lang.hitch(this, function() {
+            debugger;
             // let initViewPoint = mapView.viewpoint;
             this.$emit("map-ready", {
               map,
