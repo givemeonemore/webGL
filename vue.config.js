@@ -61,6 +61,7 @@ module.exports = {
       // 给 sass-loader 传递选项
       // 在新版本的sass-loader中不再使用data: `@import "@/styles/index.scss";`，而是改成prependData: `@import "@/styles/index.scss";`
       sass: {
+        // eslint-disable-next-line quotes
         prependData: `@import "@/styles/index.scss";`
       }
     }
