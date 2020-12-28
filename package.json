@@ -50,23 +50,15 @@
     "eslint": "^6.7.2",
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-vue": "^6.1.2",
-<<<<<<< HEAD
-    "node-sass": "^4.14.1",
-=======
     "node-sass": "^4.12.0",
     "plop": "^2.7.4",
     "postcss": "^7.0.32",
->>>>>>> 19e20b0b7b01c39f1c1742e51b1d2fb34cc026a8
     "prettier": "^1.19.1",
     "sass-loader": "^8.0.2",
     "svg-sprite-loader": "^5.0.0",
     "three": "^0.113.2",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "vue-template-compiler": "^2.6.11",
-<<<<<<< HEAD
-    "webpack": "^4.43.0"
-=======
     "vuepress": "^1.5.4"
->>>>>>> 19e20b0b7b01c39f1c1742e51b1d2fb34cc026a8
   }
 }

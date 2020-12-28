@@ -1,4 +1,5 @@
 const path = require("path");
+
 function resolve(dir) {
   return path.join(__dirname, dir);
 }
@@ -98,10 +99,9 @@ module.exports = {
   // },
   // 生产环境打包去除console.log
   configureWebpack: {
-    devtool:
-      process.env.NODE_ENV === "development"
-        ? "cheap-module-eval-source-map"
-        : "source-map",
+    devtool: process.env.NODE_ENV === "development" ?
+      "cheap-module-eval-source-map" :
+      "source-map",
     optimization: {
       minimizer: [
         new TerserPlugin({
@@ -123,44 +123,37 @@ module.exports = {
       unknownContextCritical: false
     },
     // gzip
-    plugins:
-      process.env.NODE_ENV === "production"
-        ? [
-            new CompressionPlugin({
-              filename: "[path].gz[query]",
-              algorithm: "gzip",
-              test: new RegExp(
-                "\\.(" + productionGzipExtensions.join("|") + ")$"
-              ),
-              threshold: 10240,
-              minRatio: 0.8
-            }),
-            new CopyWebpackPlugin([
-              {
-                from: path.join(
-                  "node_modules/cesium/Source",
-                  "../Build/Cesium/Workers"
-                ),
-                to: "Workers"
-              }
-            ]),
-            new CopyWebpackPlugin([
-              {
-                from: path.join("node_modules/cesium/Source", "Assets"),
-                to: "Assets"
-              }
-            ]),
-            new CopyWebpackPlugin([
-              {
-                from: path.join("node_modules/cesium/Source", "Widgets"),
-                to: "Widgets"
-              }
-            ]),
-            new webpack.DefinePlugin({
-              // Define relative base path in cesium for loading assets
-              CESIUM_BASE_URL: JSON.stringify("./")
-            })
-          ]
-        : []
+    plugins: process.env.NODE_ENV === "production" ?
+      [
+        new CompressionPlugin({
+          filename: "[path].gz[query]",
+          algorithm: "gzip",
+          test: new RegExp(
+            "\\.(" + productionGzipExtensions.join("|") + ")$"
+          ),
+          threshold: 10240,
+          minRatio: 0.8
+        }),
+        new CopyWebpackPlugin([{
+          from: path.join(
+            "node_modules/cesium/Source",
+            "../Build/Cesium/Workers"
+          ),
+          to: "Workers"
+        }]),
+        new CopyWebpackPlugin([{
+          from: path.join("node_modules/cesium/Source", "Assets"),
+          to: "Assets"
+        }]),
+        new CopyWebpackPlugin([{
+          from: path.join("node_modules/cesium/Source", "Widgets"),
+          to: "Widgets"
+        }]),
+        new webpack.DefinePlugin({
+          // Define relative base path in cesium for loading assets
+          CESIUM_BASE_URL: JSON.stringify("./")
+        })
+      ] :
+      []
   }
 };
