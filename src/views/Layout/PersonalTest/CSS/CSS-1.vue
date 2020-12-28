@@ -1,3 +1,11 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: zhouran
+ * @Date: 2020-08-01 15:03:33
+ * @LastEditors: zhouran
+ * @LastEditTime: 2020-09-02 14:45:44
+-->
 <template>
   <div class="css-1">
     <div class="css-1-body"></div>
@@ -5,13 +13,6 @@
 </template>
 
 <script>
-/*
- * @Author: 周然
- * @Date: 2020-04-26 21:44:21
- * @LastEditors: humx
- * @LastEditTime: 2020-08-03 13:26:37
- * @Description:
- */
 export default {
   name: "loading",
   data() {

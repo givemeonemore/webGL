@@ -36,11 +36,9 @@ export default {
           meta: {
             requireAuth: true // 判断是否需要登录
           },
-          // component: () =>
-          //   import(/* webpackChunkName: "CSS-1" */ "@/views/Layout/PersonalTest/CSS/CSS-1.vue")
           component: () =>
             import(
-              /* webpackChunkName: "MapTest" */
+              /* webpackChunkName: "CSS-1" */
               "@/views/Layout/PersonalTest/CSS/CSS-1.vue"
             )
         },
@@ -50,12 +48,24 @@ export default {
           meta: {
             requireAuth: true // 判断是否需要登录
           },
-          // component: () =>
-          //   import(/* webpackChunkName: "CSS-2" */ "@/views/Layout/PersonalTest/CSS/CSS-2.vue")
           component: () =>
             import(
-              /* webpackChunkName: "MapTest" */
+              /* webpackChunkName: "CSS-2" */
               "@/views/Layout/PersonalTest/CSS/CSS-2.vue"
+            )
+        },
+
+        // --------------------------------------- vue --------------------------------------
+        {
+          path: "vue-1",
+          name: "vue-1",
+          meta: {
+            requireAuth: true // 判断是否需要登录
+          },
+          component: () =>
+            import(
+              /* webpackChunkName: "Vue1" */
+              "@/views/Layout/PersonalTest/Vue/Vue-1.vue"
             )
         }
       ]

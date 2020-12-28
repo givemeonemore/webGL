@@ -36,7 +36,7 @@
           <MenuItem name="JavaScript-1">WebGL图像处理1</MenuItem>
           <MenuItem name="JavaScript-2">WebGL图像处理2</MenuItem>
         </Submenu>
-        <Submenu name="Vue">
+        <Submenu name="VUE">
           <template slot="title">
             <Icon type="ios-paper"></Icon>
             Vue理论实践

@@ -20,7 +20,7 @@ const subclassingLayerType = async function(pt, glMatrix) {
     constructor: function() {
       // 必须在每一帧从头开始重新计算几何变换
       // $glMatrix 是一个图形计算矩阵库，里面包含多个计算矩阵，具体方法可参考http://glmatrix.net/docs/index.html
-
+      glMatrix.glMatrix.setMatrixArrayType(Float32Array);
       this.transform = glMatrix.mat3.create();
       this.translationToCenter = glMatrix.vec2.create();
       this.screenTranslation = glMatrix.vec2.create();
@@ -29,14 +29,10 @@ const subclassingLayerType = async function(pt, glMatrix) {
       this.display = glMatrix.mat3.fromValues(NaN, 0, 0, 0, NaN, 0, -1, 1, 1);
       this.screenScaling = glMatrix.vec3.fromValues(NaN, NaN, 1);
 
-      // Whether the vertex and index buffers need to be updated
-      // due to a change in the layer data.
+      // 顶点和索引缓冲区是否因图层数据的更改而需要更新.
       this.needsUpdate = false;
 
-      // We listen for changes to the graphics collection of the layer
-      // and trigger the generation of new frames. A frame rendered while
-      // `needsUpdate` is true may cause an update of the vertex and
-      // index buffers.
+      // 监听图层图形集合的变化并触发新帧的生成。needsUpdate为true时渲染的帧可能会导致顶点和索引缓冲区的更新.
       let requestUpdate = () => {
         this.needsUpdate = true;
         this.requestRender();
@@ -64,7 +60,7 @@ const subclassingLayerType = async function(pt, glMatrix) {
         varying vec2 v_offset;
         const float SIZE = 70.0;
         void main() {
-          gl_Position.xy = (u_display * (u_transform * vec3(a_position, 1.0) + vec3(a_offset * SIZE, 0.0))).xy;;
+          gl_Position.xy = (u_display * (u_transform * vec3(a_position, 1.0) + vec3(a_offset * SIZE, 0.0))).xy;
           gl_Position.zw = vec2(0.0, 1.0);
           v_offset = a_offset;
         }
@@ -75,7 +71,7 @@ const subclassingLayerType = async function(pt, glMatrix) {
         uniform float u_current_time;
         varying vec2 v_offset;
         const float PI = 3.14159;
-        const float N_RINGS = 3.0;
+        const float N_RINGS = 2.0;
         const vec3 COLOR = vec3(0.0, 0.0, 1.0);
         const float FREQ = 1.0;
         void main() {
@@ -199,11 +195,11 @@ const subclassingLayerType = async function(pt, glMatrix) {
         this.translationToCenter
       );
 
-      // Update view `display` matrix; it converts from pixels to normalized device coordinates.
+      // 更新视图“display”矩阵；其作用为将像素转换为标准化设备坐标.
       this.display[0] = 2 / (state.pixelRatio * state.size[0]);
       this.display[4] = -2 / (state.pixelRatio * state.size[1]);
 
-      // Draw.
+      // 进行绘制.
       gl.useProgram(this.program);
       gl.uniformMatrix3fv(this.uTransform, false, this.transform);
       gl.uniformMatrix3fv(this.uDisplay, false, this.display);
@@ -218,21 +214,22 @@ const subclassingLayerType = async function(pt, glMatrix) {
       gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
       gl.drawElements(gl.TRIANGLES, this.indexBufferSize, gl.UNSIGNED_SHORT, 0);
 
-      // Request new render because markers are animated.
+      gl.drawArrays(gl.POINTS, this.indexBufferSize, gl.UNSIGNED_SHORT, 1);
+
+      // 因为标记已设置动画，所以这里需要请求新渲染.
       this.requestRender();
     },
 
-    // Called by the map view or the popup view when hit testing is required.
+    // 当需要命中测试时，由地图视图或弹出视图调用.
     hitTest: function(x, y) {
-      // The map view.
+      // 地图视图.
       let view = this.view;
 
       if (this.layer.graphics.length === 0) {
-        // Nothing to do.
         return promiseUtils.resolve(null);
       }
 
-      // Compute screen distance between each graphic and the test point.
+      // 计算每个图形和测试点之间的屏幕距离.
       let distances = this.layer.graphics.map(graphic => {
         let graphicPoint = view.toScreen(graphic.geometry);
         return Math.sqrt(
@@ -241,7 +238,7 @@ const subclassingLayerType = async function(pt, glMatrix) {
         );
       });
 
-      // Find the minimum distance.
+      // 找到最小的距离
       let minIndex = 0;
 
       distances.forEach((distance, i) => {
@@ -252,20 +249,18 @@ const subclassingLayerType = async function(pt, glMatrix) {
 
       let minDistance = distances.getItemAt(minIndex);
 
-      // If the minimum distance is more than 35 pixel then nothing was hit.
+      // 如果最小距离大于35像素，则未命中任何内容.
       if (minDistance > 35) {
         return promiseUtils.resolve(null);
       }
 
-      // Otherwise it is a hit; We set the layer as the source layer for the graphic
-      // (required for the popup view to work) and we return a resolving promise to
-      // the graphic.
+      // 如果都以上条件均满足，则确定这是一个有效点击（命中）；我们将该层设置为图形的源层（弹出视图工作所必需的），并向图形返回一个promise.
       let graphic = this.layer.graphics.getItemAt(minIndex);
       graphic.sourceLayer = this.layer;
       return promiseUtils.resolve(graphic);
     },
 
-    // Called internally from render().
+    // 从render（）内部调用.
     updatePositions: function(renderParameters) {
       if (!this.centerAtLastUpdate) {
         return;
@@ -274,7 +269,7 @@ const subclassingLayerType = async function(pt, glMatrix) {
       let stationary = renderParameters.stationary;
       let state = renderParameters.state;
 
-      // If we are not stationary we simply update the `translationToCenter` vector.
+      // 如果视图位置发生更新，需更新“translationToCenter”向量.
       if (!stationary) {
         glMatrix.vec2.sub(
           this.translationToCenter,
@@ -285,8 +280,7 @@ const subclassingLayerType = async function(pt, glMatrix) {
         return;
       }
 
-      // If we are stationary, the `layer.graphics` collection has not changed, and
-      // we are centered on the `centerAtLastUpdate`, we do nothing.
+      // 如果视图位置未发生更新，且`layer.graphics图层`集合没有更改
       if (
         !this.needsUpdate &&
         this.translationToCenter[0] === 0 &&
@@ -295,10 +289,9 @@ const subclassingLayerType = async function(pt, glMatrix) {
         return;
       }
 
-      // Otherwise, we record the new encoded center, which imply a reset of the `translationToCenter` vector,
-      // we record the update time, and we proceed to update the buffers.
+      // 如果视图位置发生更新或者graphics图层发生变化，需记录新的编码中心，重置“translationToCenter”向量，记录更新时间，然后继续更新缓冲区.
 
-      // this.centerAtLastUpdate.set(state.center);
+      this.centerAtLastUpdate.set(state.center);
       glMatrix.vec2.set(state.center);
       this.translationToCenter[0] = 0;
       this.translationToCenter[1] = 0;
@@ -306,7 +299,7 @@ const subclassingLayerType = async function(pt, glMatrix) {
 
       let graphics = this.layer.graphics;
 
-      // Generate vertex data.
+      // 生成顶点数据.
       gl.bindBuffer(gl.ARRAY_BUFFER, this.vertexBuffer);
       let vertexData = new Float32Array(16 * graphics.length);
 
@@ -314,7 +307,7 @@ const subclassingLayerType = async function(pt, glMatrix) {
       graphics.forEach(graphic => {
         let point = graphic.geometry;
 
-        // The (x, y) position is relative to the encoded center.
+        // （x，y）位置相对于编码中心.
         let x = point.x - this.centerAtLastUpdate[0];
         let y = point.y - this.centerAtLastUpdate[1];
 
@@ -340,7 +333,7 @@ const subclassingLayerType = async function(pt, glMatrix) {
 
       gl.bufferData(gl.ARRAY_BUFFER, vertexData, gl.STATIC_DRAW);
 
-      // Generates index data.
+      // 生成索引数据.
       gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, this.indexBuffer);
 
       let indexData = new Uint16Array(6 * graphics.length);
@@ -355,15 +348,14 @@ const subclassingLayerType = async function(pt, glMatrix) {
 
       gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, indexData, gl.STATIC_DRAW);
 
-      // Record number of indices.
+      // 指数记录数.
       this.indexBufferSize = indexData.length;
     }
   });
 
   let CustomLayer = GraphicsLayer.createSubclass({
     createLayerView: function(view) {
-      // We only support MapView, so we only need to return a
-      // custom layer view for the `2d` case.
+      // 当前版本只支持MapView，所以只需要为“2d”案例返回一个自定义图层视图.
       if (view.type === "2d") {
         return new CustomLayerView2D({
           view: view,

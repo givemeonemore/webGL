@@ -11,35 +11,58 @@
         @on-select="handleSkip"
       >
         <div v-for="(item, index) in menuListData" :key="index">
-          <template v-if="item.children && item.children.length">
-            <Submenu name="item.courseName">
-              <template v-if="item.children && item.children.length">
+          <div v-if="item.children && item.children.length">
+            <Submenu :name="item.courseName">
+              <template slot="title">
+                <Icon type="ios-navigate"></Icon>
+                {{ item.courseName }}
+              </template>
+              <div v-if="item.children && item.children.length">
+                <learning-curriculum
+                  :subMenuListData="item.children"
+                ></learning-curriculum>
                 <div v-for="(cItem, cIndex) in item.children" :key="cIndex">
-                  <template v-if="cItem.children && cItem.children.length">
-                    <Submenu name="cItem.courseName">
-                      <template v-if="cItem.children && cItem.children.length">
+                  <div v-if="cItem.children && cItem.children.length">
+                    <!-- <Submenu class="submenu-title" :name="cItem.courseName">
+                      <template slot="title">
+                        <Icon type="ios-navigate"></Icon>
+                        <span class="submenu-title">{{
+                          cItem.courseName
+                        }}</span>
+                      </template>
+                      <div v-if="cItem.children && cItem.children.length">
                         <div
                           v-for="(ccItem, ccIndex) in cItem.children"
                           :key="ccIndex"
                         >
-                          <MenuItem name="ccItem.courseName"></MenuItem>
+                          <MenuItem class="submenu-title" :name="ccItem.courseName">{{
+                            ccItem.courseName
+                          }}</MenuItem>
                         </div>
-                      </template>
-                    </Submenu>
-                  </template>
-                  <MenuItem v-else name="cItem.courseName"></MenuItem>
+                      </div>
+                    </Submenu> -->
+                  </div>
+                  <MenuItem
+                    v-else
+                    class="submenu-title"
+                    :name="cItem.courseName"
+                    >{{ cItem.courseName }}</MenuItem
+                  >
                 </div>
-              </template>
+              </div>
             </Submenu>
-          </template>
-          <MenuItem v-else name="item.courseName"></MenuItem>
+          </div>
+          <MenuItem v-else :name="item.courseName">{{
+            item.courseName
+          }}</MenuItem>
         </div>
       </Menu>
     </Sider>
     <Layout class="body-layout">
       <Content class="body-layout-content">
-        <div class="body-layout-content-app-main-con">
-          <router-view />
+        <div class="body-layout-content-app-main-con" v-if="showPage">
+          <!-- <router-view /> -->
+          <iframe :src="htmlSrc"></iframe>
         </div>
       </Content>
     </Layout>
@@ -48,46 +71,86 @@
 
 <script>
 import { getLearnningCourse } from "@/api/learningCurriculum";
+import LearningCurriculum from "@/views/Layout/LearningCurriculum/LearningCurriculum";
 export default {
   name: "LearningCurriculum",
+  components: { LearningCurriculum },
   data() {
     return {
       activeName: "",
       menuListData: [],
-      openName: []
+      openName: [],
+      htmlSrc: "",
+      showPage: false
     };
+  },
+  props: {
+    subMenuListData: {
+      type: Array,
+      default: () => []
+    }
   },
   computed: {},
   created() {
-    this.getMenuData();
+    if (!this.subMenuListData || !this.subMenuListData.length) {
+      this.getMenuData();
+    } else {
+      this.menuListData = this.subMenuListData;
+      this.getMenuActiveName();
+    }
   },
   methods: {
     async getMenuData() {
       this.menuListData = await getLearnningCourse();
+      this.getMenuActiveName();
+      this.$nextTick(() => {
+        this.$refs.Menu.updateActiveName();
+        // this.htmlSrc = require(`@/assets/learningcurriculum/${this.urlFileLocation}${this.urlFileName}`);
+        this.showPage = true;
+      });
+    },
+
+    getMenuActiveName() {
       if (this.menuListData.length) {
-        this.activeName = this.getMenuName(this.menuListData);
+        this.getInitMenuName(this.menuListData);
         this.openName[0] = this.menuListData[0].courseName;
       }
     },
-    getMenuName(menuData) {
-      let menuName = "";
+
+    getInitMenuName(menuData) {
       menuData.forEach((item, index) => {
         if (index === 0) {
           if (item.children && item.children.length) {
-            menuName = this.getMenuName(item.children);
+            this.getInitMenuName(item.children);
           } else {
-            menuName = item.courseName;
+            this.activeName = item.courseName;
+            this.urlFileLocation = item.urlFileLocation;
+            this.urlFileName = item.urlFileName;
+            // this.htmlSrc = require(`@/assets/learningcurriculum/${item.urlFileLocation}${item.urlFileName}`);
+            // this.showPage = true;
           }
         }
       });
-      return menuName;
     },
+
     updateActiveName() {},
-    handleSkip(name) {
-      this.$router.push({
-        name: name,
-        params: {}
+
+    getClickMenuName(menuData, name) {
+      menuData.forEach(item => {
+        if (item.children && item.children.length) {
+          this.getClickMenuName(item.children, name);
+        } else {
+          if (item.courseName === name) {
+            // this.htmlSrc = require(`@/assets/learningcurriculum/${item.urlFileLocation}${item.urlFileName}`);
+            this.showPage = true;
+          }
+        }
       });
+    },
+
+    handleSkip(name) {
+      this.showPage = false;
+      this.getClickMenuName(this.menuListData, name);
     }
   }
 };
@@ -101,17 +164,19 @@ export default {
   position: relative;
   &-sider {
     position: fixed;
-    height: 100%;
+    height: calc(100% - 3rem);
     left: 0;
     overflow: auto;
     width: 15rem !important;
     min-width: 15rem !important;
     max-width: 15rem !important;
-    >>> .ivu-menu-submenu-title {
-      text-align: left;
-    }
-    >>> .ivu-menu {
-      >>> .ivu-menu-item {
+    ::v-deep .ivu-menu {
+      .ivu-menu-submenu-title {
+        text-align: left;
+        display: flex;
+        align-items: center;
+      }
+      .ivu-menu-item {
         text-align: left;
       }
     }
