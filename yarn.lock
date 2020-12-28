@@ -3869,6 +3869,11 @@ bytes@3.1.0:
   resolved "https://registry.npm.taobao.org/bytes/download/bytes-3.1.0.tgz#f6cf7933a360e0588fa9fde85651cdc7f805d1f6"
   integrity sha1-9s95M6Ng4FiPqf3oVlHNx/gF0fY=
 
+c-vue-comp@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.npm.taobao.org/c-vue-comp/download/c-vue-comp-1.0.7.tgz#0d5121d79d215dc7a5d6646068417247e704e1ba"
+  integrity sha1-DVEh150hXcel1mRgaEFyR+cE4bo=
+
 cac@^6.5.6:
   version "6.6.1"
   resolved "https://registry.npm.taobao.org/cac/download/cac-6.6.1.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcac%2Fdownload%2Fcac-6.6.1.tgz#3dde3f6943f45d42a56729ea3573c08b3e7b6a6d"
@@ -7355,9 +7360,9 @@ inherits@2.0.3:
   integrity sha1-Yzwsg+PaQqUC9SRmAiSA9CCCYd4=
 
 ini@^1.3.4, ini@^1.3.5, ini@~1.3.0:
-  version "1.3.5"
-  resolved "https://registry.npm.taobao.org/ini/download/ini-1.3.5.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fini%2Fdownload%2Fini-1.3.5.tgz#eee25f56db1c9ec6085e0c22778083f596abf927"
-  integrity sha1-7uJfVtscnsYIXgwid4CD9Zar+Sc=
+  version "1.3.7"
+  resolved "https://registry.yarnpkg.com/ini/-/ini-1.3.7.tgz#a09363e1911972ea16d7a8851005d84cf09a9a84"
+  integrity sha512-iKpRpXP+CrP2jyrxvg1kMUpXDyRUFDWurxbnVT1vQPx+Wz9uCYsMIqYuSBLV+PAaZG/d7kRLKRFc9oDMsH+mFQ==
 
 inquirer@^7.0.0:
   version "7.0.5"
