@@ -6,7 +6,39 @@ html body {
   line-height: 1.15; // iview设的是1.5，但ui是常规的1.15，需要覆盖
 }
 
+body,
+button,
+input,
+p,
+li,
+ol,
+ul,
+div,
+section,
+article,
+td,
+th,
+span,
+textarea,
+form,
+footer,
+header,
+nav,
+main,
+address,
+aside,
+pre,
+canvas {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 ul {
+  list-style: none;
+}
+
+li {
   list-style: none;
 }
 

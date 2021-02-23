@@ -69,7 +69,8 @@ module.exports = {
   chainWebpack: config => {
     config.resolve.alias
       .set("@", resolve("src"))
-      .set("cesium", resolve(__dirname, cesiumSource));
+      .set("cesium", resolve(__dirname, cesiumSource))
+      .set("VisualDrag", resolve("src/views/Layout/VisualDrag"));
     // svg的处理
     config.module
       .rule("svg")

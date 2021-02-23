@@ -4,6 +4,7 @@ import webgl from "./webgl";
 import componentTest from "./componentTest";
 import personalTest from "./personalTest";
 import learningCurriculum from "./learningCurriculum";
+import visualDrag from "./visualDrag";
 import { isDev, hasRegisterRoute } from "@/utils/base";
 
 Vue.use(VueRouter);
@@ -37,6 +38,9 @@ const routes = [
   },
   {
     ...learningCurriculum
+  },
+  {
+    ...visualDrag
   }
 ];
 
