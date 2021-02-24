@@ -12,6 +12,21 @@ Vue.component("echarts", echarts);
 import * as glMatrix from "gl-matrix";
 // 全局注册glMatrix
 Vue.prototype.$glMatrix = glMatrix;
+
+// Sentry 错误监控注册
+// import * as Sentry from "@sentry/vue";
+// import { Integrations } from "@sentry/tracing";
+// Sentry.init({
+//   Vue,
+//   dsn:
+//     "https://61f5fe3d0fdc46c2a7794ca231700972@o530360.ingest.sentry.io/5649750",
+//   integrations: [new Integrations.BrowserTracing()],
+
+//   // We recommend adjusting this value in production, or using tracesSampler
+//   // for finer control
+//   tracesSampleRate: 1.0
+// });
+
 // 全局组件注册
 import "@/components";
 

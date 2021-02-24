@@ -3,9 +3,13 @@ import App from "./App.vue";
 // import iview from "iview";
 import store from "./store";
 import router from "./router";
+
 // 全局组件、指令、原型等统一注册
 import "./register";
 // import "./assets/Build/Cesium/Widgets/widgets.css";
+
+
+import "./sentry";
 
 // 全局css
 import "./styles/global.scss";
