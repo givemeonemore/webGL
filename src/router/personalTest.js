@@ -65,7 +65,7 @@ export default {
           component: () =>
             import(
               /* webpackChunkName: "Vue1" */
-              "@/views/Layout/PersonalTest/Vue/VUE-1.vue"
+              "@/views/Layout/PersonalTest/Vue/Vue-1.vue"
             )
         }
       ]

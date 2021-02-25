@@ -8,8 +8,8 @@ import router from "./router";
 import "./register";
 // import "./assets/Build/Cesium/Widgets/widgets.css";
 
-
-import "./sentry";
+// 检测首屏加载时间等
+// import "./../timeWait";
 
 // 全局css
 import "./styles/global.scss";

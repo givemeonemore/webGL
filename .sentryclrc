@@ -1,0 +1,7 @@
+[default]
+url=http://localhost:9000
+org=zhouran
+project=sentry-test
+
+[auth]
+token=c72149253eee4c9f9d809214c46dc85919dea16e1f4142ccbd35fad2fe774343

@@ -57,6 +57,7 @@ export default {
     window.addEventListener("touchend", this.onTouchEnd, true);
   },
   beforeDestroy() {
+    this.ctx.clearRect(0, 0, this.ww, this.wh);
     window.removeEventListener("resize", this.initScene, true);
     window.removeEventListener("mousemove", this.onMouseMove, true);
     window.removeEventListener("touchmove", this.onTouchMove, true);

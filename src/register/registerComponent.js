@@ -14,18 +14,20 @@ import * as glMatrix from "gl-matrix";
 Vue.prototype.$glMatrix = glMatrix;
 
 // Sentry 错误监控注册
-// import * as Sentry from "@sentry/vue";
-// import { Integrations } from "@sentry/tracing";
-// Sentry.init({
-//   Vue,
-//   dsn:
-//     "https://61f5fe3d0fdc46c2a7794ca231700972@o530360.ingest.sentry.io/5649750",
-//   integrations: [new Integrations.BrowserTracing()],
+import * as Sentry from "@sentry/vue";
+import { Integrations } from "@sentry/tracing";
 
-//   // We recommend adjusting this value in production, or using tracesSampler
-//   // for finer control
-//   tracesSampleRate: 1.0
-// });
+Sentry.init({
+  Vue,
+  dsn: "http://03cac5a9eb294ba090d66358bbc117b1@localhost:9000/2",
+  integrations: [new Integrations.BrowserTracing()],
+
+  // We recommend adjusting this value in production, or using tracesSampler
+  // for finer control
+  tracesSampleRate: 1.0,
+  logErrors: true, // 如果不配置这个为true，则sentry不会在控制台输出错误
+  release: "test@1.0.1" // 版本
+});
 
 // 全局组件注册
 import "@/components";

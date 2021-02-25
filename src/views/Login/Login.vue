@@ -19,6 +19,12 @@ export default {
       title: ""
     };
   },
+  created() {
+    console.log(window.a.b);
+  },
+  destroyed() {
+    
+  },
   methods: {}
 };
 </script>
