@@ -42,6 +42,8 @@
 // import { highSwitch } from "@/utils/judge";
 import { SET_USER_INFO, SET_LOGIN_STATUS, SET_SYSNAME } from "@/store/types.js";
 import highSwitch from "./judge";
+import { loginCheck } from "@/api/login";
+import { setCookie } from "@/utils/utils";
 export default {
   name: "LoginContent",
   mixins: [highSwitch],
@@ -75,7 +77,7 @@ export default {
     getPassword() {
       this.password = "zhouran";
     },
-    handleLogIn() {
+    async handleLogIn() {
       if (this.userName === "") {
         this.userNameClass = "registerOrLogin-content-form-userName-red-border";
         return;
@@ -84,36 +86,37 @@ export default {
         this.passwordClass = "registerOrLogin-content-form-password-red-border";
         return;
       }
-      let result = "";
-      if (this.userName !== "zhouran" && this.password !== "zhouran") {
-        result = 0;
-      }
-      if (this.userName === "zhouran" && this.password !== "zhouran") {
-        result = 1;
-      }
-      if (this.userName !== "zhouran" && this.password === "zhouran") {
-        result = 2;
-      }
-      if (this.userName === "zhouran" && this.password === "zhouran") {
-        result = 3;
-      }
-      let logInResult = this.highSwitch(result);
-      if (logInResult) {
-        let userInfo = {
-          userName: this.userName,
-          password: this.password
-        };
-        this.$store.commit(SET_USER_INFO, userInfo);
-        this.$store.commit(SET_LOGIN_STATUS, true);
-        this.$store.commit(SET_SYSNAME, "WebGL测试项目");
-        window.localStorage.setItem("token", "1234");
-        window.localStorage.setItem("userInfo", JSON.stringify(userInfo));
-        window.localStorage.setItem("sysName", "WebGL测试项目");
-        this.$router.push({
-          name: "Portal",
-          params: {}
-        });
-      }
+      // let result = "";
+      // if (this.userName !== "zhouran" && this.password !== "zhouran") {
+      //   result = 0;
+      // }
+      // if (this.userName === "zhouran" && this.password !== "zhouran") {
+      //   result = 1;
+      // }
+      // if (this.userName !== "zhouran" && this.password === "zhouran") {
+      //   result = 2;
+      // }
+      // if (this.userName === "zhouran" && this.password === "zhouran") {
+      //   result = 3;
+      // }
+      // let logInResult = this.highSwitch(result);
+      let userInfo = {
+        name: this.userName,
+        password: this.password
+      };
+      const data = await loginCheck(userInfo);
+      this.highSwitch(3);
+      setCookie(data.uuid);
+      this.$store.commit(SET_USER_INFO, userInfo);
+      this.$store.commit(SET_LOGIN_STATUS, true);
+      this.$store.commit(SET_SYSNAME, "WebGL测试项目");
+      window.localStorage.setItem("token", "1234");
+      window.localStorage.setItem("userInfo", JSON.stringify(userInfo));
+      window.localStorage.setItem("sysName", "WebGL测试项目");
+      this.$router.push({
+        name: "Portal",
+        params: {}
+      });
     }
   }
 };

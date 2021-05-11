@@ -30,23 +30,30 @@ export function throttle(fn, delay) {
   };
 }
 
-// 事件的防抖方法
-export function debounce(fn, delay) {
+// 事件的防抖方法 —— 进阶版
+export function debounce(fn, delay, immediate) {
   delay = delay || 500;
-  let timer = null;
-  // 将debounce处理结果当做函数返回
+  let timer = null,
+    result;
   return function() {
-    // 保留调用时的this上下文
-    let context = this;
-    // 保留调用时传入的参数
-    let args = arguments;
     if (timer) {
       clearTimeout(timer);
     }
-    timer = setTimeout(() => {
-      timer = null;
-      fn.apply(context, args);
-    }, delay);
+    if (immediate) {
+      let callback = !timer;
+      timer = setTimeout(() => {
+        timer = null;
+      }, delay);
+      if (callback) {
+        result = fn.apply(this, arguments);
+      }
+    } else {
+      timer = setTimeout(() => {
+        fn.apply(this, arguments);
+        timer = null;
+      }, delay);
+    }
+    return result;
   };
 }
 

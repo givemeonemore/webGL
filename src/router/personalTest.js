@@ -30,6 +30,7 @@ export default {
         name: "css-1"
       },
       children: [
+        // --------------------------------------- css --------------------------------------
         {
           path: "css-1",
           name: "css-1",
@@ -52,6 +53,20 @@ export default {
             import(
               /* webpackChunkName: "CSS-2" */
               "@/views/Layout/PersonalTest/CSS/CSS-2.vue"
+            )
+        },
+
+        // --------------------------------------- JavaScript --------------------------------------
+        {
+          path: "JavaScript-1",
+          name: "JavaScript-1",
+          meta: {
+            requireAuth: true // 判断是否需要登录
+          },
+          component: () =>
+            import(
+              /* webpackChunkName: "JavaScript-1" */
+              "@/views/Layout/PersonalTest/JavaScript/VirtualList.vue"
             )
         },
 

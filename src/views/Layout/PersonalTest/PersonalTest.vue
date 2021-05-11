@@ -33,8 +33,9 @@
             <Icon type="ios-keypad"></Icon>
             JavaScript实践
           </template>
-          <MenuItem name="JavaScript-1">WebGL图像处理1</MenuItem>
-          <MenuItem name="JavaScript-2">WebGL图像处理2</MenuItem>
+          <!-- <MenuItem name="JavaScript-1">WebGL图像处理1</MenuItem>
+          <MenuItem name="JavaScript-2">WebGL图像处理2</MenuItem> -->
+          <MenuItem name="JavaScript-1">长列表渲染优化</MenuItem>
         </Submenu>
         <Submenu name="VUE">
           <template slot="title">
